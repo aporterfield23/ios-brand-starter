@@ -69,3 +69,11 @@
   --color-success: #30d158;
   --color-warning: #ffb340;
 }
+
+@media (prefers-contrast: more) {
+  [data-mode="dark"] {
+    --color-accent: #9FB9FF;
+    --color-accent-strong: #C1D3FF;
+    --color-destructive: #FFA5A1;
+  }
+}

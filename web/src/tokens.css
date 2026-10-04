@@ -69,3 +69,13 @@
   --color-success: #248a3d;
   --color-warning: #b25000;
 }
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-accent: #17399D;
+    --color-accent-strong: #0F2A72;
+    --color-destructive: #A50010;
+    --color-success: #1A652D;
+    --color-warning: #873C00;
+  }
+}
