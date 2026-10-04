@@ -6,8 +6,8 @@
     "colorset": "Assets.xcassets/Accent.colorset",
     "light": "#1f4fd8",
     "dark": "#6a93ff",
-    "highContrastLight": "#17399D",
-    "highContrastDark": "#9FB9FF"
+    "highContrastLight": "#082FB8",
+    "highContrastDark": "#9CBAFE"
   },
   {
     "token": "color.accent-strong",
@@ -16,7 +16,7 @@
     "colorset": "Assets.xcassets/AccentStrong.colorset",
     "light": "#1740b0",
     "dark": "#8aabff",
-    "highContrastLight": "#0F2A72",
+    "highContrastLight": "#1740b0",
     "highContrastDark": "#C1D3FF"
   },
   {
@@ -66,8 +66,8 @@
     "colorset": "Assets.xcassets/Destructive.colorset",
     "light": "#d70015",
     "dark": "#ff6961",
-    "highContrastLight": "#A50010",
-    "highContrastDark": "#FFA5A1"
+    "highContrastLight": "#A4030F",
+    "highContrastDark": "#FFA69D"
   },
   {
     "token": "color.success",
@@ -76,8 +76,8 @@
     "colorset": "Assets.xcassets/Success.colorset",
     "light": "#248a3d",
     "dark": "#30d158",
-    "highContrastLight": "#1A652D",
-    "highContrastDark": "#30d158"
+    "highContrastLight": "#035E21",
+    "highContrastDark": "#61F77C"
   },
   {
     "token": "color.warning",
@@ -86,7 +86,7 @@
     "colorset": "Assets.xcassets/Warning.colorset",
     "light": "#b25000",
     "dark": "#ffb340",
-    "highContrastLight": "#873C00",
+    "highContrastLight": "#863B01",
     "highContrastDark": "#ffb340"
   },
   {
