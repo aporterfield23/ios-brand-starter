@@ -17,9 +17,23 @@ Generated from `tokens/tokens.json` by `npm install && npm run tokens` (Node 22+
 - `ios-system-map.json` decides which tokens are system-owned. Edit it to move a token between system and brand.
 
 ## Fonts
-- Files in `ios/Fonts/`. Add them to the app target and list them under "Fonts provided by application" (UIAppFonts) in Info.plist.
-- `Typography.swift` already wraps custom fonts in `Font.custom(_:size:relativeTo:)`. If the font's PostScript name differs from its family name, update the family token in Figma so the generated name matches.
-- If a family is "SF Pro", the generated code uses the system font; don't bundle SF Pro.
+Families set to "SF Pro" use the system font and need no files; never bundle SF Pro. Any other brand font needs its files in the app.
+
+- Font files go in `ios/Fonts/`, unmodified from the font's official release, with its license file (for Google Fonts, `OFL.txt`). Use the official static files (one per weight, e.g. `Brand-Bold.ttf`, `Brand-SemiBold.ttf`), not a variable font: a variable font's default instance is often a different width or weight, so iOS may not match the family name. Don't make your own static cuts if the license reserves the font name (most OFL fonts do).
+- Include at least the weights `Typography.swift` uses (check its `.weight(...)` calls), plus Regular if the app needs it elsewhere.
+- Setup: drag the files into Xcode with the app target ticked, then list each file name in Info.plist under "Fonts provided by application" (`UIAppFonts`):
+
+  ```xml
+  <key>UIAppFonts</key>
+  <array>
+      <string>Brand-Bold.ttf</string>
+      <string>Brand-SemiBold.ttf</string>
+  </array>
+  ```
+
+- `Typography.swift` asks for the family name with `Font.custom(_:size:relativeTo:)` and sets the weight, so iOS picks the matching file. Check a title on a device: if it shows in SF Pro, the font isn't registered (check target membership and the Info.plist names). Don't rename the family token in Figma to fix it; the website loads the font by that name. Record each file's PostScript name in this section in case a developer wants to reference a face directly.
+- Dynamic Type still works: each style uses `relativeTo:` an iOS text style. Check long titles at the largest accessibility sizes.
+- The website loads brand fonts from Google Fonts (`web/src/fonts.css`), so the files in `ios/Fonts/` are for the app only.
 
 ## Website
 The same tokens style a website. Everything is in `web/`:
